@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="play_first">
+      <h1 class="heading">Playing first</h1>
+      <!--<button class="player" id="player_sym">Change</button> -->
+
+      <form action="play()">
+        <input
+          type="radio"
+          id="human_first"
+          checked="checked"
+          name="first_player"
+          value="YOU"
+        />
+        YOU
+        <input
+          type="radio"
+          name="first_player"
+          value="Computer"
+          id="computer_first"
+          onclick="g.show_start_btn()"
+        />
+        COMPUTER
+      </form>
+    </div>
+
+    <!-- <h1 class="player" id="player_sym"></h1> -->
+
+    <div id="reset-btn">
+      <!-- <button id="rst-btn" onclick="g.new_game()" hidden>Start Game</button> -->
+      <button id="rst-btn" onclick="g.start_game()" hidden>Start Game</button>
+    </div>
+
+    <div id="winner-div"><h1 id="winner" hidden>Computer Won</h1></div>
+
+    <div class="grids" id="game_grid">
+      <button class="grid-items" id="btn1" onclick="g.play(this.id)"></button>
+      <button class="grid-items" id="btn2" onclick="g.play(this.id)"></button>
+      <button class="grid-items" id="btn3" onclick="g.play(this.id)"></button>
+      <button class="grid-items" id="btn4" onclick="g.play(this.id)"></button>
+      <button class="grid-items" id="btn5" onclick="g.play(this.id)"></button>
+      <button class="grid-items" id="btn6" onclick="g.play(this.id)"></button>
+      <button class="grid-items" id="btn7" onclick="g.play(this.id)"></button>
+      <button class="grid-items" id="btn8" onclick="g.play(this.id)"></button>
+      <button class="grid-items" id="btn9" onclick="g.play(this.id)"></button>
+    </div>
+
+    <script src="index.js"></script>
+    <script>
+      let g = new Game();
+      function enableAnimation() {
+        document.getElementById("reset-btn").style.animationName = "btn_static";
+      }
+    </script>
+  </body>
+</html>
